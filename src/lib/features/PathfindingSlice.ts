@@ -1,16 +1,16 @@
-import { END_TILE_CONFIG, START_TILE_CONFIG } from '@/utils/constants'
+import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 import { createGrid } from '@/utils/helpers'
 import { AlgorithmType, GridType, MazeType } from '@/utils/types'
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { END_TILE_CONFIG, START_TILE_CONFIG } from '@/utils/constants'
 
-type PathFindingType = {
+type PathFindingSliceType = {
   algorithm: AlgorithmType
   maze: MazeType
   grid: GridType
   isVisualized: boolean
 }
 
-const initialState: PathFindingType = {
+const initialState: PathFindingSliceType = {
   algorithm: 'BFS',
   maze: 'NONE',
   grid: createGrid(START_TILE_CONFIG, END_TILE_CONFIG),
