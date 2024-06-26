@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
-import pathfindingSlice from '../lib/features/PathfindingSlice'
-import tileSlice from '../lib/features/TileSlice'
+import pathfindingSlice from './features/PathfindingSlice'
+import tileSlice from './features/TileSlice'
+import SpeedSlice from './features/SpeedSlice'
 
 export const store = configureStore({
   reducer: {
     pathfindingSlice,
     tileSlice,
+    SpeedSlice
   },
   devTools: process.env.NODE_ENV !== 'production',
 })
