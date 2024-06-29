@@ -1,10 +1,11 @@
 'use client'
+import { Grid } from '@/components'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div className='flex h-screen w-screen items-center justify-center text-5xl font-bold'>
-      Maze Visualizer
+    <div className='flex flex-col h-screen w-screen bg-[#131416]'>
+      <Grid />
     </div>
   )
 }
