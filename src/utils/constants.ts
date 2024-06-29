@@ -38,7 +38,7 @@ export const PATH_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-yellow-400";
 export const TRAVERSED_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-cyan-400";
 
 export const MAZES: MazeSelectType[] = [
-  { name: "No Maze", value: "NONE" },
+  { name: "Empty Maze", value: "NONE" },
   { name: "Binary Tree", value: "BINARY_TREE" },
   { name: "Recursive Division", value: "RECURSIVE_DIVISION" },
 ];

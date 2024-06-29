@@ -1,15 +1,19 @@
-import React from 'react'
-import Tile from './Tile'
-import { useAppSelector } from '@/lib/hooks'
+import React, { MutableRefObject, forwardRef } from "react";
+import Tile from "./Tile";
+import { useAppSelector } from "@/lib/hooks";
 
-const Grid = () => {
-  const grid = useAppSelector((state) => state.pathfindingSlice.grid)
+type Props = {
+  isVisualizerRunning: MutableRefObject<boolean>;
+};
+
+const Grid = forwardRef(({ isVisualizerRunning }: Props, ref) => {
+  const grid = useAppSelector((state) => state.pathfindingSlice.grid);
   return (
-    <div className='flex flex-col items-center justify-center border-sky-300 mt-10'>
+    <div className="mt-10 flex flex-col items-center justify-center border-sky-300">
       {grid.map((rows, index) => (
-        <div key={index} className='flex'>
+        <div key={index} className="flex">
           {rows.map((tile, tileIndex) => {
-            const { isStart, isEnd, isWall, isPath, isTraversed } = tile
+            const { isStart, isEnd, isWall, isPath, isTraversed } = tile;
             return (
               <Tile
                 key={tileIndex}
@@ -21,12 +25,12 @@ const Grid = () => {
                 isPath={isPath}
                 isTraversed={isTraversed}
               />
-            )
+            );
           })}
         </div>
       ))}
     </div>
-  )
-}
+  );
+});
 
-export default Grid
+export default Grid;
