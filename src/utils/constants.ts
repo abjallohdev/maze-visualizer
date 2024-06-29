@@ -1,5 +1,7 @@
-const MAX_ROWS = 39
-const MAX_COLS = 49
+import { AlgorithmSelectType, MazeSelectType, SpeedSelectType } from "./types";
+
+const MAX_ROWS = 39;
+const MAX_COLS = 49;
 
 const START_TILE_CONFIG = {
   row: 1,
@@ -11,7 +13,7 @@ const START_TILE_CONFIG = {
   isTraversed: false,
   distance: 0,
   parent: null,
-}
+};
 
 const END_TILE_CONFIG = {
   row: MAX_ROWS - 2,
@@ -23,14 +25,33 @@ const END_TILE_CONFIG = {
   isTraversed: false,
   distance: 0,
   parent: null,
-}
+};
 
-export { MAX_ROWS, MAX_COLS, START_TILE_CONFIG, END_TILE_CONFIG }
+export { MAX_ROWS, MAX_COLS, START_TILE_CONFIG, END_TILE_CONFIG };
 
 export const DEFAULT_TILE_STYLE =
-  "border-t border-r border-sky-200 h-[7px] xs:h-[8px] md:h-[15px] lg:h-[17px] w-[7px] xs:w-[8px] md:w-[15px] lg:w-[17px]"
-export const START_TILE_STYLE = DEFAULT_TILE_STYLE + ' bg-green-400'
-export const END_TILE_STYLE = DEFAULT_TILE_STYLE + ' bg-red-400'
-export const WALL_TILE_STYLE = DEFAULT_TILE_STYLE + ' bg-gray-400'
-export const PATH_TILE_STYLE = DEFAULT_TILE_STYLE + ' bg-yellow-400'
-export const TRAVERSED_TILE_STYLE = DEFAULT_TILE_STYLE + ' bg-cyan-400'
+  "border-t border-r border-sky-200 h-[7px] xs:h-[8px] md:h-[15px] lg:h-[17px] w-[7px] xs:w-[8px] md:w-[15px] lg:w-[17px]";
+export const START_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-green-400";
+export const END_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-red-400";
+export const WALL_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-gray-400";
+export const PATH_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-yellow-400";
+export const TRAVERSED_TILE_STYLE = DEFAULT_TILE_STYLE + " bg-cyan-400";
+
+export const MAZES: MazeSelectType[] = [
+  { name: "No Maze", value: "NONE" },
+  { name: "Binary Tree", value: "BINARY_TREE" },
+  { name: "Recursive Division", value: "RECURSIVE_DIVISION" },
+];
+
+export const ALGORITHMS: AlgorithmSelectType[] = [
+  { name: "A-star", value: "A-STAR" },
+  { name: "Breadth-first Search", value: "BFS" },
+  { name: "Depth-first Search", value: "DFS" },
+  { name: "Dijkstra", value: "DIJKSTRA" },
+];
+
+export const SPEEDS: SpeedSelectType[] = [
+  { name: "Slow", value: 2 },
+  { name: "Medium", value: 1 },
+  { name: "Fast", value: 0.5 },
+];
