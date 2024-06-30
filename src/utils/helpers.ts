@@ -1,8 +1,8 @@
-import { MAX_COLS, MAX_ROWS } from './constants'
-import { GridType, TileType } from './types'
+import { MAX_COLS, MAX_ROWS } from "./constants";
+import { GridType, TileType } from "./types";
 
 const createRow = (row: number, startTile: TileType, endTile: TileType) => {
-  const currentRow = []
+  const currentRow = [];
 
   for (let column = 0; column < MAX_COLS; column++) {
     currentRow.push({
@@ -15,17 +15,21 @@ const createRow = (row: number, startTile: TileType, endTile: TileType) => {
       isTraversed: false,
       distance: Infinity,
       parent: null,
-    })
+    });
   }
-  return currentRow
-}
+  return currentRow;
+};
 
 export const createGrid = (startTile: TileType, endTile: TileType) => {
-  const grid: GridType = []
+  const grid: GridType = [];
 
   for (let row = 0; row < MAX_ROWS; row++) {
-    grid.push(createRow(row, startTile, endTile))
+    grid.push(createRow(row, startTile, endTile));
   }
 
-  return grid
-}
+  return grid;
+};
+
+export const isEqual = (a: TileType, b: TileType) => {
+  return a.row === b.row && a.column === b.column;
+};
